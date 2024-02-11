@@ -124,12 +124,15 @@ class Assets {
       'assets/fonts/ElMessiri-Regular.ttf';
   static const String fontsElMessiriSemiBold =
       'assets/fonts/ElMessiri-SemiBold.ttf';
+  static const String imagesBodyOfSeb7a = 'assets/images/body_of_seb7a.png';
   static const String imagesHadethHeader = 'assets/images/hadeth_header.png';
   static const String imagesHadethIcn = 'assets/images/hadeth_icn.png';
+  static const String imagesHeadOfSeb7a = 'assets/images/head_of_seb7a.png';
   static const String imagesMainBackground =
       'assets/images/main_background.png';
   static const String imagesQuranHeader = 'assets/images/quran_header.png';
   static const String imagesQuranIcn = 'assets/images/quran_icn.png';
+  static const String imagesRadio = 'assets/images/radio.png';
   static const String imagesRadioIcn = 'assets/images/radio_icn.png';
   static const String imagesSebhaIcn = 'assets/images/sebha_icn.png';
   static const String imagesSplashBackground =
