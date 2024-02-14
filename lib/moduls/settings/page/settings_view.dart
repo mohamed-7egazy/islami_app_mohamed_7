@@ -7,59 +7,76 @@ import 'package:provider/provider.dart';
 class SettingsView extends StatelessWidget {
   SettingsView({super.key});
 
-  List<String> languagesList = [
-    "ُEnglish",
-    "عربى",
-  ];
-  List<String> themeList = [
-    "ُDark",
-    "Light",
-  ];
+  List<String> languageList = ["English", "عربى"];
+  List<String> themeList = ["Light", "Dark"];
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
     var theme = Theme.of(context);
-    var local = AppLocalizations.of(context)!;
-    var vm = Provider.of<SettingsProvider>(context);
-
+    var vm = Provider.of<settingProvider>(context);
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(40.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            local.language,
+            lang.language,
             style: theme.textTheme.bodyLarge,
           ),
-          const SizedBox(height: 10),
-          CustomDropdown<String>(
-            items: languagesList,
-            // initialItem: vm.currentLanguage == "en" ? "English" : "عربى",
-            onChanged: (value) {
-              if (value == "English") {
-                vm.changeLanguage("en");
-              } else if (value == "عربى") {
-                vm.changeLanguage("ar");
-              }
-            },
-          ),
+          const SizedBox(height: 20),
+          CustomDropdown(
+              decoration: CustomDropdownDecoration(
+                expandedSuffixIcon: Icon(Icons.keyboard_arrow_up,
+                    color:
+                        vm.isDark() ? const Color(0xFFFACC10) : Colors.black),
+                closedSuffixIcon: Icon(
+                  Icons.keyboard_arrow_down,
+                  color: vm.isDark() ? const Color(0xFFFACC10) : Colors.black,
+                ),
+                closedFillColor:
+                    vm.isDark() ? const Color(0xFF141A2E) : Colors.white,
+                expandedFillColor:
+                    vm.isDark() ? const Color(0xFF141A2E) : Colors.white,
+              ),
+              initialItem: vm.currentLanguage == "en" ? "English" : "عربى",
+              items: languageList,
+              onChanged: (value) {
+                if (value == "English") {
+                  vm.changeLanguage("en");
+                } else if (value == "عربى") {
+                  vm.changeLanguage("ar");
+                }
+              }),
           const SizedBox(height: 40),
           Text(
-            local.theme,
+            lang.theme,
             style: theme.textTheme.bodyLarge,
           ),
-          const SizedBox(height: 10),
-          CustomDropdown<String>(
-            items: themeList,
-            onChanged: (value) {
-              if (value == "Dark") {
-                vm.changeTheme(ThemeMode.dark);
-              } else if (value == "Light") {
-                vm.changeTheme(ThemeMode.light);
-              }
-              print(value);
-            },
-          ),
+          const SizedBox(height: 20),
+          CustomDropdown(
+              initialItem: vm.isDark() ? "Dark" : "Light",
+              decoration: CustomDropdownDecoration(
+                expandedSuffixIcon: Icon(Icons.keyboard_arrow_up,
+                    color:
+                        vm.isDark() ? const Color(0xFFFACC10) : Colors.black),
+                closedSuffixIcon: Icon(
+                  Icons.keyboard_arrow_down,
+                  color: vm.isDark() ? const Color(0xFFFACC10) : Colors.black,
+                ),
+                closedFillColor:
+                    vm.isDark() ? const Color(0xFF141A2E) : Colors.white,
+                expandedFillColor:
+                    vm.isDark() ? const Color(0xFF141A2E) : Colors.white,
+              ),
+              items: themeList,
+              onChanged: (value) {
+                if (value == "Dark") {
+                  vm.changeTheme(ThemeMode.dark);
+                } else if (value == "Light") {
+                  vm.changeTheme(ThemeMode.light);
+                }
+              })
         ],
       ),
     );

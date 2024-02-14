@@ -135,7 +135,6 @@ class QuranView extends StatelessWidget {
         ),
         Divider(
           thickness: 1,
-          color: theme.primaryColor,
         ),
         Row(
           children: [
@@ -170,7 +169,6 @@ class QuranView extends StatelessWidget {
         ),
         Divider(
           thickness: 1,
-          color: theme.primaryColor,
         ),
         Expanded(
           child: ListView.builder(

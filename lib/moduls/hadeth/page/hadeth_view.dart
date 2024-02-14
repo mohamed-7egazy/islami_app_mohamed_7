@@ -26,7 +26,6 @@ class _HadethViewState extends State<HadethView> {
           height: mediaQuery.height * 0.2,
         ),
         Divider(
-          color: theme.primaryColor,
           thickness: 1.2,
         ),
         const Text(
@@ -37,7 +36,6 @@ class _HadethViewState extends State<HadethView> {
               fontWeight: FontWeight.w600),
         ),
         Divider(
-          color: theme.primaryColor,
           thickness: 1.2,
         ),
         Expanded(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SettingsProvider extends ChangeNotifier {
+class settingProvider extends ChangeNotifier {
   String currentLanguage = "en";
-  ThemeMode currentThemeMode = ThemeMode.light;
+  ThemeMode currentTheme = ThemeMode.dark;
 
   changeLanguage(String newLanguage) {
     if (currentLanguage == newLanguage) return;
@@ -11,8 +11,18 @@ class SettingsProvider extends ChangeNotifier {
   }
 
   changeTheme(ThemeMode newTheme) {
-    if (currentThemeMode == newTheme) return;
-    currentThemeMode == newTheme;
+    if (currentTheme == newTheme) return;
+    currentTheme = newTheme;
     notifyListeners();
+  }
+
+  String getBackground() {
+    return currentTheme != ThemeMode.dark
+        ? "assets/images/main_background.png"
+        : "assets/images/bg_dark.png";
+  }
+
+  bool isDark() {
+    return currentTheme == ThemeMode.dark;
   }
 }
