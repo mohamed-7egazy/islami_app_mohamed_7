@@ -25,7 +25,7 @@ class _HadethViewState extends State<HadethView> {
           "assets/images/hadeth_header.png",
           height: mediaQuery.height * 0.2,
         ),
-        Divider(
+        const Divider(
           thickness: 1.2,
         ),
         const Text(
@@ -35,7 +35,7 @@ class _HadethViewState extends State<HadethView> {
               fontSize: 25,
               fontWeight: FontWeight.w600),
         ),
-        Divider(
+        const Divider(
           thickness: 1.2,
         ),
         Expanded(

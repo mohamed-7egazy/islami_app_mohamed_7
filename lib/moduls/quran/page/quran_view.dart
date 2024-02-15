@@ -133,7 +133,7 @@ class QuranView extends StatelessWidget {
           "assets/images/quran_header.png",
           height: mediaQuery.height * 0.2,
         ),
-        Divider(
+        const Divider(
           thickness: 1,
         ),
         Row(
@@ -167,7 +167,7 @@ class QuranView extends StatelessWidget {
             ),
           ],
         ),
-        Divider(
+        const Divider(
           thickness: 1,
         ),
         Expanded(

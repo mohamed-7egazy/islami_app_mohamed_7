@@ -50,7 +50,7 @@ class _LayoutViewState extends State<LayoutView> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage(
                   "assets/images/quran_icn.png",
                 ),
@@ -58,7 +58,7 @@ class _LayoutViewState extends State<LayoutView> {
               label: lang.quran,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage(
                   "assets/images/hadeth_icn.png",
                 ),
@@ -66,7 +66,7 @@ class _LayoutViewState extends State<LayoutView> {
               label: lang.hadith,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage(
                   "assets/images/sebha_icn.png",
                 ),
@@ -74,7 +74,7 @@ class _LayoutViewState extends State<LayoutView> {
               label: lang.tasbih,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage(
                   "assets/images/radio_icn.png",
                 ),
@@ -82,7 +82,7 @@ class _LayoutViewState extends State<LayoutView> {
               label: lang.radio,
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: const Icon(
                 Icons.settings,
               ),
               label: lang.settings,
